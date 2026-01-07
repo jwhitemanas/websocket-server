@@ -49,7 +49,7 @@ wss.on('connection', (ws, request) => {
 
   ws.on('message', (message) => {
     console.log(`From ${id}:`, message.toString());
-    edge.write(message.toString());
+    edge.write(id + message.toString());
   });
 
   ws.on('close', () => {
