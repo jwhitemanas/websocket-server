@@ -34,8 +34,9 @@ const listener = net.createServer((socket) => {
   });
 });
 
-listener.listen(3001, "127.0.0.1", () => {
-  console.log(`IPC started on ${TCP_PORT}`);
+const port = 3001
+listener.listen(port, "127.0.0.1", () => {
+  console.log(`IPC started on ${port}`);
 });
 
 const clients = new Map()
