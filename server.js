@@ -24,6 +24,8 @@ const listener = net.createServer((socket) => {
       console.error("Missing or invalid 'data' field");
       return;
     }
+    msg.id = uuidv4();
+    msg.timestamp = Date.now();
     sendToClient(msg.client, JSON.stringify(msg.data));
   });
   socket.on("close", () => {
