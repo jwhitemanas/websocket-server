@@ -13,7 +13,7 @@ const listener = net.createServer((socket) => {
     try {
       msg = JSON.parse(text);
     } catch (err) {
-      console.error("Invalid JSON from local process:", err.message);
+      console.error("Invalid JSON from local process:", err.message, "\nJSON: ", text);
       return;
     }
     if (!msg.client || typeof msg.client !== "string") {
